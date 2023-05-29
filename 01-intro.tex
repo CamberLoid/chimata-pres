@@ -1,0 +1,88 @@
+% 01-intro.tex
+% about 2-3mins
+\section{课题综述}
+
+\subsection{选题背景和研究意义}
+
+\begin{frame}
+    \frametitle{选题背景}
+
+    % 背景包括
+    \begin{itemize}
+        \item 移动支付随着电子商务的兴起而被推广：
+        \begin{itemize}
+            \item 买卖双方在线下商定好金额后，通过某一支付服务提供商进行转账；
+            \item 依托于云计算服务
+        \end{itemize}
+        \item 受到许多安全方面的挑战：
+        \begin{itemize}
+            \item 外部：攻击者通过各种方式获得密钥并解密信息，或是“先存储后解密”攻击；
+            \item 内部：监守自盗，在未经用户许可下访问信息并非法构建用户画像；
+        \end{itemize}
+        \item 泄露后果：推断用户其他各种敏感信息
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{研究意义}
+
+    本文提出了一种金额密态的，适用于移动支付场景的交易方案，实现了用户之间的交易金额只由交易双方知道而不泄露给第三方。具体而言：
+    \begin{itemize}
+        \item 借助 CKKS 方案所基于的困难问题，保证交易金额的隐私性；
+        \item 使用 CKKS 方案的同态特性，实现了对用户密文账户余额的同态操作以及手续费的计算，确保了可交易性；
+        \item 本文的研究有助于拓展和提出更完备、功能更强的交易隐私保护方案，也有助于提高用户对移动支付的信任度。
+    \end{itemize}
+
+\end{frame}
+
+\subsection{研究现状}
+
+\begin{frame}
+    \frametitle{相关工作}
+
+    \begin{itemize}
+        \item 全同态加密
+        \begin{itemize}
+            \item Craig G. 首次提出整数的全同态加密方案，包括自举手段等
+            \item Cheon 等人在 2017 年提出支持浮点数加解密的同态加密方案 HEAAN，并被后人学者命名为 CKKS，通过自举达到全同态性。
+        \end{itemize}
+        \item 隐私交易方案 
+        \begin{itemize}
+            \item 2018 年，一个结合了区块链和同态加密的电子医疗记录隐私保护方案被提出，实现了保险公司等第三方在无法获取客户明文医疗记录的情况下，仍然可以判断是否理赔的功能；
+            \item 2020 年，姜轶涵等人在他的文献里运用了同态加密、零知识证明和数字签名等密码学手段，提出了一个密态的可审计交易方案。
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\subsection{主要贡献和创新}
+
+\begin{frame}
+    \frametitle{主要贡献和创新}
+
+    \begin{itemize}
+        \item 对现有的交易隐私保护方法和全同态加密算法进行调研，提出了一个基于同态加密的用户交易金额隐私保护交易方案；
+        \item 使用 CKKS 方案对浮点数的支持的特性，确保了交易的隐私性和可交易性，包括浮点数手续费的计算，以及账户密文余额同态更新等；
+        \item 使用密钥交换确保了交易的正确性；使用 ECDSA 算法确保了不可伪造性；
+        \item 使用 Golang 编写了一个简单的库实现，包括客户端和服务端逻辑、一个简单的服务器 CLI 程序，以及相关单元测试；
+        \item 测试表明，方案在密码学方面具有良好的时间开销和可以接受的空间开销。
+    \end{itemize}
+
+\end{frame}
+
+\subsection{论文结构安排}
+\begin{frame}
+    \frametitle{论文结构安排}
+
+    \begin{enumerate}
+        \item 绪论
+        \item 基础知识
+        \item 支付方案设计
+        \item 具体的代码设计
+        \item 实验评估
+        \item 总结和展望
+    \end{enumerate}
+
+\end{frame}
+

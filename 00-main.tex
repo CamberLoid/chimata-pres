@@ -1,0 +1,72 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{xeCJK}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{utopia} %font utopia imported
+\usetheme{CambridgeUS}
+\usecolortheme{dolphin}
+
+\setCJKmainfont[AutoFakeBold,ItalicFont=KaiTi]{SimHei}%
+\setCJKsansfont[AutoFakeBold]{SimHei}%
+\setCJKmonofont{FangSong}
+
+% set colors
+\definecolor{myNewColorA}{RGB}{176,32,60}
+\definecolor{myNewColorB}{RGB}{215,105,104}
+\definecolor{myNewColorC}{RGB}{253,178,147}
+\setbeamercolor*{palette primary}{bg=myNewColorC}
+\setbeamercolor*{palette secondary}{bg=myNewColorB, fg = white}
+\setbeamercolor*{palette tertiary}{bg=myNewColorA, fg = white}
+\setbeamercolor*{titlelike}{fg=myNewColorA}
+\setbeamercolor*{title}{bg=myNewColorA, fg = white}
+\setbeamercolor*{item}{fg=myNewColorA}
+\setbeamercolor*{caption name}{fg=myNewColorA}
+\usefonttheme{professionalfonts}
+\usepackage{natbib}
+\usepackage{hyperref}
+%------------------------------------------------------------
+\titlegraphic{\includegraphics[height=1.5cm]{xdu.png}}
+
+\setbeamerfont{title}{size=\large}
+\setbeamerfont{subtitle}{size=\small}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{institute}{size=\small}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\begin{document}
+
+\title{基于同态加密的用户交易金额隐私保护方案}
+\subtitle{毕业设计 答辩展示}
+\author[黄**]{
+  \begin{tabular}{rl}
+    答辩学生：& 黄** \\
+    指导老师：& 王**
+  \end{tabular}
+}
+\institute[camber@poi.science]{西安电子科技大学}
+\date[2023.5.29]{2023.5.29}
+
+% Table of contents
+\frame{\titlepage}
+\begin{frame}{目录}
+    \tableofcontents
+\end{frame}
+
+\input{01-intro.tex}
+\input{02-design.tex}
+\input{03-experiment.tex}
+\input{04-summary.tex}
+
+\end{document}
